@@ -1,25 +1,34 @@
-<!-- Create a container to display the game in the browser -->
-
-<!-- Define an array of word objects in global scope to store words for the game -->
-
-<!-- Define a function to select a random word from the array and display it on the screen -->
-
-<!-- Define a function to handle user input:
-     - Convert the input to lowercase
-     - Validate the input format
-     - Disable input during game timer countdown (to be implemented) -->
-
-<!-- Define a function to check if the user input matches the displayed word:
-     - Compare the user input with the current word
-     - Update score if the input is correct
-     - Display feedback to the user -->
-
-<!-- Define a function to handle game win conditions:
-     - Display a congratulatory banner with the user's score -->
-
-<!-- Define a function to increase the score when the user guesses correctly -->
-
-<!-- Define a function to reset the game:
-     - Reset all game-related variables and UI elements to initial state -->
-
-<!-- Implement a timer function to add time pressure to the game (to be added) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>WordSmith's Enigma</title>
+</head>
+<body>
+    
+    <div id="container">
+        <div id="score">Score: <span id="score-value">100</span></div>
+        <ul class="word-display">
+        <li class = "letter"></li>
+        <li class = "letter"></li>
+        <li class = "letter">c</li>
+        <li class = "letter"></li>
+        <li class = "letter"></li>
+        </ul>
+        <h4 class="hint-text">Hint: <b></b></h4>
+        <button id="Solve-btn">Solve</button>
+        <div id="boxes">
+            <div id="fortune-box"><span id="fortune-teller"></span></div>
+            <div id="user-input"><span id="input"></span></div>
+        </div>
+        <div id="game-btn">
+            <button id="next-turn">Next Turn</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+    </div>
+    
+</body>
+</html>
