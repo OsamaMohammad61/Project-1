@@ -19,11 +19,22 @@ let wrongguess = 0
 let correct = false
 
 ///////////////functions////////////////////
+
 const gameFortune = () => {
   Random = Math.floor(Math.random() * 100)
 
   fortune.innerText = Random
 }
+const animateFortune = (finalNumber) => {
+  let currentNumber = 0;
+  let animationInterval = setInterval(() => {
+    currentNumber = Math.floor(Math.random() * 100); // Range of numbers
+    fortune.innerText = currentNumber;
+    if (currentNumber === finalNumber) {
+      clearInterval(animationInterval);
+    }
+  }, 50); 
+};
 
 const randomWord = () => {
   const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)]
@@ -67,7 +78,7 @@ const gamePlay = () => {
   scoreValue.innerText = score
   Random = Math.floor(Math.random() * 100)
 
-  fortune.innerText = Random
+  animateFortune(Random)
   diff = 0
 }
 
