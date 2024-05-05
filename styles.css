@@ -2,8 +2,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
   height: 100vh;
+  margin: 0;
 }
 .container {
   width: 850px;
@@ -80,4 +80,16 @@ body {
   margin-bottom: 40px;
   text-transform: uppercase;
   border-bottom: 3px solid #000;
+}
+#score {
+  margin: 10px;
+  font-weight: bold;
+  font-size: large;
+  order: 1; /* Set order to 1 to push it to the right */
+}
+#timer {
+  margin: 10px;
+  font-weight: bold;
+  font-size: large;
+  order: -1; /* Set order to -1 to push it to the left */
 }

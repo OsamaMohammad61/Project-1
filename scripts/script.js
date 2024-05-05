@@ -3,15 +3,24 @@ let fortune = document.querySelector('#fortune-teller')
 let guessWord = document.querySelector('.word-display')
 let nextTurn = document.querySelector('#next-turn')
 let input = document.querySelector('#input')
-
-let currentWord = ''
-let inputVal = ''
+let scoreValue = document.querySelector('#score-value')
+let resetBtn = document.querySelector('#reset-btn')
+let wrng = document.querySelector('#wrong-guesses')
+let currentWord,
+  inputVal,
+  Random,
+  timer = ''
 let wordArray = []
 let checkArr = []
+let score = 0
+let diff = 0
+let time = 20
+let wrongguess = 0
+let correct = false
 
 ///////////////functions////////////////////
 const gameFortune = () => {
-  let Random = Math.floor(Math.random() * 100)
+  Random = Math.floor(Math.random() * 100)
 
   fortune.innerText = Random
 }
@@ -28,33 +37,53 @@ const randomWord = () => {
   console.log(wordArray)
 }
 
-const winCheck = () => {
+const gamePlay = () => {
+  if (input.value.trim() === '') {
+    console.log('No character entered. Please enter a letter.')
+    return
+  }
   inputVal = input.value.toLowerCase()
   console.log(inputVal)
+
   wordArray.forEach((word, index) => {
     if (word === inputVal) {
+      correct = true
       console.log('happy')
       checkArr.push(inputVal)
       guessWord.querySelectorAll('li')[index].innerText = inputVal
+
       input.value = ''
+      diff++
     }
   })
+  if (!correct) {
+    wrongguess++
+
+    wrng.innerText = wrongguess
+  }
+  ///Insert a game over function
+
+  score += Random * diff
+  scoreValue.innerText = score
+  Random = Math.floor(Math.random() * 100)
+
+  fortune.innerText = Random
+  diff = 0
 }
 
 const reset = () => {
   checkArr = []
   input.innerText = ''
   wordArray = []
+  score = 0
 }
 
 //////////////Event Listners///////////////////////////
 nextTurn.addEventListener('click', () => {
   if (checkArr.length != wordArray.length && checkArr.length > 0) {
-    gameFortune()
-    winCheck()
+    gamePlay()
   } else if (checkArr.length === 0) {
-    gameFortune()
-    winCheck()
+    gamePlay()
   } else {
     randomWord()
     reset()
