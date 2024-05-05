@@ -87,9 +87,44 @@ body {
   font-size: large;
   order: 1; /* Set order to 1 to push it to the right */
 }
-#timer {
+#guess {
   margin: 10px;
   font-weight: bold;
   font-size: large;
   order: -1; /* Set order to -1 to push it to the left */
+}
+
+#game-over-popup {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 20%;
+  transform: translate(-50%, -50%); /* Center the popup */
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  z-index: 10; 
+  text-align: center;
+  display: none; /* Initially hidden (matches 'hidden' class in JS) */
+}
+
+#playAgain{
+
+  position: absolute; /* Make the button absolute relative to the popup */
+  bottom: 20px; /* Position 20px from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the button horizontally within the popup */
+  display: flex;
+  align-items: center; /* Align button content vertically */
+  justify-content: center; /* Align button content horizontally */
+  width: 80px;
+  height: 30px;
+  background-color: rgb(245, 191, 191); /* Adjust button background color */
+  color: rgb(231, 26, 26); /* Adjust button text color */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+
 }

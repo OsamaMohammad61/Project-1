@@ -11,13 +11,13 @@
 <body>
     
     <div id="container">
+        <div id="game-over-popup"><button id = "playAgain">Play Again</button></div>
         <div class="header">
-        <div id="score">Score: <span id="score-value"></span></div>
-        <div id="timer">Wrong Guesses: <span id="wrong-guesses"></span></div>
+        <div id="score">Score: <span id="score-value">0</span></div>
+        <div id="guess">Wrong Guesses: <span id="wrong-guesses"></span></div>
         </div>
         <ul class="word-display"></ul>
         <h4 class="hint-text">Hint: <b></b></h4>
-        <button id="Solve-btn">Solve</button>
         <div id="boxes">
             <div id="fortune-box"><span id="fortune-teller"></span></div>
             <input id="input" type="text" maxlength="1" size="1" pattern="[A-Za-z]" placeholder="Input 1 character">
