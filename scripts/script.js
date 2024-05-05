@@ -3,8 +3,7 @@ let fortune = document.querySelector('#fortune-teller')
 let guessWord = document.querySelector('.word-display')
 let nextTurn = document.querySelector('#next-turn')
 let input = document.querySelector('#input')
-let nxtwrdBtn = document.querySelector('#nextWord')
-let checkBtn = document.querySelector('#check')
+
 let currentWord = ''
 let inputVal = ''
 let wordArray = []
@@ -27,13 +26,9 @@ const randomWord = () => {
   document.querySelector('.hint-text b').innerText = hint
   wordArray = [...currentWord]
   console.log(wordArray)
-  inputVal = input.value.toLowerCase()
-  console.log(inputVal)
 }
 
 const winCheck = () => {
-  wordArray = [...currentWord]
-  console.log(wordArray)
   inputVal = input.value.toLowerCase()
   console.log(inputVal)
   wordArray.forEach((word, index) => {
@@ -41,20 +36,31 @@ const winCheck = () => {
       console.log('happy')
       checkArr.push(inputVal)
       guessWord.querySelectorAll('li')[index].innerText = inputVal
+      input.value = ''
     }
   })
 }
 
+const reset = () => {
+  checkArr = []
+  input.innerText = ''
+  wordArray = []
+}
+
 //////////////Event Listners///////////////////////////
 nextTurn.addEventListener('click', () => {
-  gameFortune()
-  randomWord()
-})
-nxtwrdBtn.addEventListener('click', () => {
-  randomWord()
+  if (checkArr.length != wordArray.length && checkArr.length > 0) {
+    gameFortune()
+    winCheck()
+  } else if (checkArr.length === 0) {
+    gameFortune()
+    winCheck()
+  } else {
+    randomWord()
+    reset()
+    gameFortune()
+  }
 })
 
-checkBtn.addEventListener('click', () => {
-  winCheck()
-})
+randomWord()
 gameFortune()
