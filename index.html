@@ -4,25 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <script defer src="./scripts/list-file.js"></script>
+    <script defer src="./scripts/script.js"></script>
     <title>WordSmith's Enigma</title>
 </head>
 <body>
     
     <div id="container">
         <div id="score">Score: <span id="score-value">100</span></div>
-        <ul class="word-display">
-        <li class = "letter"></li>
-        <li class = "letter"></li>
-        <li class = "letter">c</li>
-        <li class = "letter"></li>
-        <li class = "letter"></li>
-        </ul>
+        <ul class="word-display"></ul>
         <h4 class="hint-text">Hint: <b></b></h4>
         <button id="Solve-btn">Solve</button>
         <div id="boxes">
             <div id="fortune-box"><span id="fortune-teller"></span></div>
-            <div id="user-input"><span id="input"></span></div>
+            <input id="input" type="text" maxlength="1" size="1" placeholder="Input 1 character">
+            
         </div>
         <div id="game-btn">
             <button id="next-turn">Next Turn</button>

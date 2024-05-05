@@ -1,86 +1,83 @@
-body{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin:0;
-    height: 100vh;
-   
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
 }
-.container{
-    width: 850px;
-    background-color: white;
-    display: flex;
-    align-items: flex-end;
-    padding: 60px 40px;
-    border-radius: 5px;
+.container {
+  width: 850px;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px 40px;
+  border-radius: 5px;
 }
 
-#score{
-    margin:10px;
-    font-weight:bold;
-    font-size: large;
-    margin-left: 150px;
-    
-
+#score {
+  margin: 10px;
+  font-weight: bold;
+  font-size: large;
+  margin-left: 150px;
 }
 #score-value {
-    margin-left: 10px; /* Adjust margin to create space between "Score" and score value */
+  margin-left: 10px; /* Adjust margin to create space between "Score" and score value */
 }
 
-#game-btn{
-    margin: 40px 0 0 0;   
+#game-btn {
+  margin: 40px 0 0 0;
 }
-#next-turn{
-    margin-right: 20px;
+#next-turn {
+  margin-right: 20px;
 }
-#boxes{
-    display:flex;
-    flex-direction:row;
-    margin: 0
-
-}
-
-#fortune-box{
-    margin: 20px 20px 20px 0;
-    height: 50px;
-    width: 100px;
-    border: 2px solid;
-    
-}
-#fortune-teller{
-    font-weight: bold;
-    font-size:3rem;
-    padding: 25px;
-    text-align: center;
-}
-#user-input{
-    margin-top: 20px;
-    height: 50px;
-    width: 100px;
-    border: 2px solid;
+#boxes {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
 }
 
-#Solve-btn{
-    justify-content: center;
-    margin-left: 70px;
+#fortune-box {
+  margin: 20px 20px 20px 0;
+  height: 50px;
+  width: 100px;
+  border: 2px solid;
 }
- 
-.word-display{
-    display:flex;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 40px;
+#fortune-teller {
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 25px;
+  text-align: center;
+}
 
+#input {
+  font-weight: bold;
+  font-size: large;
+  margin-top: 20px;
+  text-align: center;
+  border: 2px solid;
+  height: 50px;
+  width: 100px;
+}
+
+#Solve-btn {
+  justify-content: center;
+  margin-left: 70px;
+}
+
+.word-display {
+  display: flex;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 40px;
 }
 .word-display .letter {
-    width: 40px;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    border-bottom: 3px solid #000;
+  width: 40px;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #000;
 }
-
