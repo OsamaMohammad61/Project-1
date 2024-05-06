@@ -127,36 +127,33 @@ body {
   font-weight: bold;
   display: none;
 }
-#empty-popup {
-  position: absolute;
-  top: 60%;
+#solve-popup {
+  position: fixed;
+  top: 50%;
   left: 50%;
-  width: 40%;
-  height: 30%;
+  width: 300px; /* Adjust width as needed */
+  height: 100px;
   transform: translate(-50%, -50%); /* Center the popup */
   background-color: white;
   padding: 20px;
   border: 2px solid #ccc;
   z-index: 10;
   text-align: center;
-
-  display: none; /* Initially hidden (matches 'hidden' class in JS) */
+  display: none; /* Initially hidden */
 }
 
-#error-disp {
-  position: relative;
-  bottom: 20px; /* Position 20px from the bottom */
-  left: 43%; /* Center horizontally */
-  /* Center the button horizontally within the popup */
-  display: flex;
-  align-items: center; /* Align button content vertically */
-  justify-content: center; /* Align button content horizontally */
-  width: 80px;
-  height: 30px;
-  color: rgb(231, 26, 26); /* Adjust button text color */
+#solve-input {
+  width: 70%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+#check-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 20px;
   border: none;
-
-  border-radius: 5px;
-  font-weight: bold;
-  display: none;
+  border-radius: 4px;
 }
+

@@ -12,21 +12,21 @@
 <body>
     
     <div id="container">
-        <div id="popup-overlay"></div>
         <div id="game-over-popup">
             <h3 id="msg-disp">the correct word was ${currentWord} and Your scores are ${score}</h3>
             <button id = "playAgain">Play Again</button>
         </div>
-        <div id="empty-popup">
-            <h3 id="error-disp"></h3>
-            <button id = "tryAgain">Return</button>
-        </div>
+        <div id="solve-popup">
+            <input type="text" id="solve-input" placeholder="Enter your guess">
+            <button id="check-btn">Check</button>
+          </div>
         <div class="header">
         <div id="score">Score: <span id="score-value">0</span></div>
         <div id="guess">Wrong Guesses: <span id="wrong-guesses"></span></div>
         </div>
         <ul class="word-display"></ul>
         <h4 class="hint-text">Hint: <b></b></h4>
+        <div id="solve"><button id="solvebtn">Solve</button></div>
         <div id="boxes">
             <div id="fortune-box"><span id="fortune-teller"></span></div>
             <input id="input" type="text" maxlength="1" size="1" pattern="[A-Za-z]" placeholder="Input 1 character">
@@ -36,6 +36,7 @@
             <button id="next-turn">Next Turn</button>
             
             <button id="reset-btn">Reset</button>
+            <button id="redo-btn">Redo</button>
         </div>
     </div>
     

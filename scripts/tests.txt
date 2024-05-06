@@ -1,0 +1,8 @@
+
+2. next turn button 
+     i. run 15 times
+     ii. 7 times with correct words
+     iii. 8 times make a mistake.
+
+3. check reset button
+     i. run 5 times
