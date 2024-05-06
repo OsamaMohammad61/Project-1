@@ -20,6 +20,7 @@ let diff = 0
 let wrongGuess = 0
 let correct = false
 let maxGuesses = 6
+let vowels = ['a', 'e', 'i', 'o', 'u']
 
 ///////////////functions////////////////////
 body.onload = () => {
@@ -82,10 +83,10 @@ const gamePlay = () => {
     console.log('No character entered. Please enter a letter.')
     return
   }
+
   wordArray.forEach((word, index) => {
     if (word === inputVal) {
       correct = true
-
       checkArr.push(inputVal)
       guessWord.querySelectorAll('li')[index].innerText = inputVal
 
@@ -99,9 +100,20 @@ const gamePlay = () => {
     wrng.innerText = `${wrongGuess} / ${maxGuesses}`
   }
   score += Random * diff
-  scoreValue.innerText = score
   Random = Math.floor(Math.random() * 100)
 
+  vowels.forEach((vowel) => {
+    if (inputVal === vowel) {
+      if (score > 25) {
+        score = score - 25
+      } else {
+        input.value = ''
+        console.log("vowel can't be used")
+      }
+    }
+  })
+  scoreValue.innerText = score
+  Random = Math.floor(Math.random() * 100)
   diff = 0
   input.value = ''
   if (wrongGuess === maxGuesses) {
