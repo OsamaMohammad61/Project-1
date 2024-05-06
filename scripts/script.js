@@ -10,6 +10,9 @@ let popup = document.querySelector('#game-over-popup')
 let msg = document.querySelector('#msg-disp')
 let playAgain = document.querySelector('#playAgain')
 let body = document.querySelector('body')
+let errorpop = document.querySelector('#empty-popup')
+let errmsg = document.querySelector('#error-disp')
+let tryAgain = document.querySelector('#tryAgain')
 let currentWord,
   inputVal,
   Random = ''
@@ -72,7 +75,8 @@ const gameOver = (won) => {
   playAgain.style.display = 'block'
   popup.style.opacity = '1'
   playAgain.style.opacity = '1'
-
+  nextTurn.disabled = true
+  resetBtn.disabled = true
   msg.innerText = `the correct word was ${currentWord} and Your scores are ${score}`
 }
 
@@ -80,7 +84,9 @@ const gamePlay = () => {
   inputVal = input.value.toLowerCase()
   console.log(inputVal)
   if (input.value.trim() === '') {
-    console.log('No character entered. Please enter a letter.')
+    errorpop.style.display = 'block'
+    tryAgain.style.display = 'block'
+    errmsg.innerText = 'No character entered. Please enter a letter.'
     return
   }
 

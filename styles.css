@@ -99,7 +99,7 @@ body {
   top: 50%;
   left: 50%;
   width: 40%;
-  height: 20%;
+  height: 35%;
   transform: translate(-50%, -50%); /* Center the popup */
   background-color: white;
   padding: 20px;
@@ -120,6 +120,39 @@ body {
   width: 80px;
   height: 30px;
   background-color: rgb(245, 191, 191); /* Adjust button background color */
+  color: rgb(231, 26, 26); /* Adjust button text color */
+  border: none;
+
+  border-radius: 5px;
+  font-weight: bold;
+  display: none;
+}
+#empty-popup {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 40%;
+  height: 30%;
+  transform: translate(-50%, -50%); /* Center the popup */
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  z-index: 10;
+  text-align: center;
+
+  display: none; /* Initially hidden (matches 'hidden' class in JS) */
+}
+
+#error-disp {
+  position: relative;
+  bottom: 20px; /* Position 20px from the bottom */
+  left: 43%; /* Center horizontally */
+  /* Center the button horizontally within the popup */
+  display: flex;
+  align-items: center; /* Align button content vertically */
+  justify-content: center; /* Align button content horizontally */
+  width: 80px;
+  height: 30px;
   color: rgb(231, 26, 26); /* Adjust button text color */
   border: none;
 

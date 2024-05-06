@@ -14,8 +14,13 @@
     <div id="container">
         <div id="popup-overlay"></div>
         <div id="game-over-popup">
-            <h3 id="msg-disp"></h3>
-            <button id = "playAgain">Play Again</button></div>
+            <h3 id="msg-disp">the correct word was ${currentWord} and Your scores are ${score}</h3>
+            <button id = "playAgain">Play Again</button>
+        </div>
+        <div id="empty-popup">
+            <h3 id="error-disp"></h3>
+            <button id = "tryAgain">Return</button>
+        </div>
         <div class="header">
         <div id="score">Score: <span id="score-value">0</span></div>
         <div id="guess">Wrong Guesses: <span id="wrong-guesses"></span></div>

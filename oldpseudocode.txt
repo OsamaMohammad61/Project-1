@@ -1,5 +1,4 @@
 Things to add in the post MVP 
 
-1. reduce the scores if the incorrect Vowel is used
+
 2. Pop up if the user doesnt enter the Character in box
-3. API for the random words
