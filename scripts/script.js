@@ -7,18 +7,16 @@ let scoreValue = document.querySelector('#score-value')
 let resetBtn = document.querySelector('#reset-btn')
 let wrng = document.querySelector('#wrong-guesses')
 let popup = document.querySelector('#game-over-popup')
-let msg = document.querySelector('msg-disp')
+let msg = document.querySelector('#msg-disp')
 let playAgain = document.querySelector('#playAgain')
 let body = document.querySelector('body')
 let currentWord,
   inputVal,
-  Random,
-  timer = ''
+  Random = ''
 let wordArray = []
 let checkArr = []
 let score = 0
 let diff = 0
-let time = 20
 let wrongGuess = 0
 let correct = false
 let maxGuesses = 6
@@ -60,12 +58,10 @@ const randomWord = () => {
 const gameOver = (won) => {
   popup.style.display = 'block'
   playAgain.style.display = 'block'
-  if (won) {
-    msg.innerText = `You have won the Game and your Scores are ${score}`
-  } else {
-    msg.innerText = `the correct word was ${currentWord}`
-    playAgain.style.display = 'block'
-  }
+  popup.style.opacity = '1'
+  playAgain.style.opacity = '1'
+
+  msg.innerText = `the correct word was ${currentWord} and Your scores are ${score}`
 }
 
 const gamePlay = () => {
@@ -98,11 +94,16 @@ const gamePlay = () => {
 
   diff = 0
   input.value = ''
-  if (wrongGuess === maxGuesses) return gameOver(false)
-  if (checkArr.length === wordArray.length) return gameOver(true)
+  if (wrongGuess === maxGuesses) {
+    return gameOver()
+  }
 
   animateFortune(Random)
   correct = false
+  if (checkArr.length === wordArray.length) {
+    gamePlay()
+    randomWord()
+  }
 }
 
 const reset = () => {
@@ -110,6 +111,8 @@ const reset = () => {
   input.innerText = ''
   wordArray = []
   score = 0
+  wrongGuess = 0
+  correct = false
 }
 
 //////////////Event Listners///////////////////////////
@@ -118,18 +121,20 @@ nextTurn.addEventListener('click', () => {
     gamePlay()
   } else if (checkArr.length === 0) {
     gamePlay()
-  } else {
+  } else if (checkArr.length === wordArray.length) {
+    gamePlay()
     randomWord()
-    reset()
-    gameFortune()
   }
 })
 
 playAgain.addEventListener('click', () => {
   popup.style.display = 'none'
   playAgain.style.display = 'none'
+  body.style.opacity = '1'
+  reset()
+  randomWord()
+  gamePlay()
+  wrng.innerText = `${wrongGuess} / ${maxGuesses}`
 })
 randomWord()
 gameFortune()
-
-////the button is not displaying in popup

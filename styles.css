@@ -106,7 +106,7 @@ body {
   border: 2px solid #ccc;
   z-index: 10;
   text-align: center;
-  display: block; /* Initially hidden (matches 'hidden' class in JS) */
+  display: none; /* Initially hidden (matches 'hidden' class in JS) */
 }
 
 #playAgain {
@@ -122,8 +122,8 @@ body {
   background-color: rgb(245, 191, 191); /* Adjust button background color */
   color: rgb(231, 26, 26); /* Adjust button text color */
   border: none;
-  cursor: pointer;
+
   border-radius: 5px;
   font-weight: bold;
-  display: block;
+  display: none;
 }
