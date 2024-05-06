@@ -22,9 +22,10 @@ let correct = false
 let maxGuesses = 6
 
 ///////////////functions////////////////////
-/*body.onload = () => {
-  popup.style.display = 'none'
-}*/
+body.onload = () => {
+  randomWord()
+  gameFortune()
+}
 const gameFortune = () => {
   Random = Math.floor(Math.random() * 100)
 
@@ -53,6 +54,7 @@ const randomWord = () => {
   document.querySelector('.hint-text b').innerText = hint
   wordArray = [...currentWord]
   console.log(wordArray)
+  checkArr = []
 }
 
 const gameOver = (won) => {
@@ -65,17 +67,16 @@ const gameOver = (won) => {
 }
 
 const gamePlay = () => {
+  inputVal = input.value.toLowerCase()
+  console.log(inputVal)
   if (input.value.trim() === '') {
     console.log('No character entered. Please enter a letter.')
     return
   }
-  inputVal = input.value.toLowerCase()
-  console.log(inputVal)
-
   wordArray.forEach((word, index) => {
     if (word === inputVal) {
       correct = true
-      console.log('happy')
+
       checkArr.push(inputVal)
       guessWord.querySelectorAll('li')[index].innerText = inputVal
 
@@ -100,10 +101,6 @@ const gamePlay = () => {
 
   animateFortune(Random)
   correct = false
-  if (checkArr.length === wordArray.length) {
-    gamePlay()
-    randomWord()
-  }
 }
 
 const reset = () => {
@@ -113,15 +110,19 @@ const reset = () => {
   score = 0
   wrongGuess = 0
   correct = false
+  randomWord()
+  gamePlay()
 }
 
 //////////////Event Listners///////////////////////////
+
 nextTurn.addEventListener('click', () => {
   if (checkArr.length != wordArray.length && checkArr.length > 0) {
     gamePlay()
   } else if (checkArr.length === 0) {
     gamePlay()
   } else if (checkArr.length === wordArray.length) {
+    console.log(checkArr.length)
     gamePlay()
     randomWord()
   }
@@ -135,6 +136,9 @@ playAgain.addEventListener('click', () => {
   randomWord()
   gamePlay()
   wrng.innerText = `${wrongGuess} / ${maxGuesses}`
+  scoreValue.innerText = score
 })
-randomWord()
-gameFortune()
+
+resetBtn.addEventListener('click', () => {
+  reset()
+})
