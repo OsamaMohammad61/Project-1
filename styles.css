@@ -95,7 +95,7 @@ body {
 }
 
 #game-over-popup {
-  position: fixed; 
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 40%;
@@ -104,17 +104,16 @@ body {
   background-color: white;
   padding: 20px;
   border: 2px solid #ccc;
-  z-index: 10; 
+  z-index: 10;
   text-align: center;
-  display: none; /* Initially hidden (matches 'hidden' class in JS) */
+  display: block; /* Initially hidden (matches 'hidden' class in JS) */
 }
 
-#playAgain{
-
+#playAgain {
   position: absolute; /* Make the button absolute relative to the popup */
   bottom: 20px; /* Position 20px from the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center the button horizontally within the popup */
+  left: 38%; /* Center horizontally */
+  /* Center the button horizontally within the popup */
   display: flex;
   align-items: center; /* Align button content vertically */
   justify-content: center; /* Align button content horizontally */
@@ -126,5 +125,5 @@ body {
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
-
+  display: block;
 }
