@@ -1,25 +1,5 @@
-<!-- Create a container to display the game in the browser -->
+Things to add in the post MVP 
 
-<!-- Define an array of word objects in global scope to store words for the game -->
-
-<!-- Define a function to select a random word from the array and display it on the screen -->
-
-<!-- Define a function to handle user input:
-     - Convert the input to lowercase
-     - Validate the input format
-     - Disable input during game timer countdown (to be implemented) -->
-
-<!-- Define a function to check if the user input matches the displayed word:
-     - Compare the user input with the current word
-     - Update score if the input is correct
-     - Display feedback to the user -->
-
-<!-- Define a function to handle game win conditions:
-     - Display a congratulatory banner with the user's score -->
-
-<!-- Define a function to increase the score when the user guesses correctly -->
-
-<!-- Define a function to reset the game:
-     - Reset all game-related variables and UI elements to initial state -->
-
-<!-- Implement a timer function to add time pressure to the game (to be added) -->
+1. reduce the scores if the incorrect Vowel is used
+2. Pop up if the user doesnt enter the Character in box
+3. API for the random words

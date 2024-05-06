@@ -44,13 +44,22 @@ const animateFortune = (finalNumber) => {
   }, 30)
 }
 
-const randomWord = () => {
-  const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)]
-  currentWord = word
+const randomWord = async () => {
+  let test1 = await axios.get(`https://random-word-api.herokuapp.com/word`)
+  console.log(test1)
+  currentWord = test1.data[0]
+  console.log(currentWord)
   guessWord.innerHTML = currentWord
     .split('')
     .map((word) => `<li class = "letter"></li>`)
     .join('')
+
+  let test = await axios.get(
+    `https://api.dictionaryapi.dev/api/v2/entries/en/${currentWord}`
+  )
+  console.log(test)
+  hint = test.data[0].meanings[0].definitions[0].definition
+
   document.querySelector('.hint-text b').innerText = hint
   wordArray = [...currentWord]
   console.log(wordArray)
