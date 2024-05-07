@@ -10,22 +10,23 @@ let popup = document.querySelector('#game-over-popup')
 let msg = document.querySelector('#msg-disp')
 let playAgain = document.querySelector('#playAgain')
 let body = document.querySelector('body')
-const solvePop = document.querySelector("#solve-popup")
-const solveInput = document.querySelector("#solve-input")
-const checkBtn = document.querySelector("#check-btn")
-const solveBtn= document.querySelector("#solvebtn")
-const redobtn= document.querySelector("#redo-btn")
+const solvePop = document.querySelector('#solve-popup')
+const solveInput = document.querySelector('#solve-input')
+const checkBtn = document.querySelector('#check-btn')
+const solveBtn = document.querySelector('#solvebtn')
+const redobtn = document.querySelector('#redo-btn')
 let currentWord,
   inputVal,
   Random = ''
 let wordArray = []
 let checkArr = []
-let solveArr =[]
+let solveArr = []
 let score = 0
 let diff = 0
 let wrongGuess = 0
-let done= false 
+let done = false
 let correct = false
+let emptyInput = false
 let maxGuesses = 6
 let vowels = ['a', 'e', 'i', 'o', 'u']
 
@@ -61,10 +62,17 @@ const randomWord = async () => {
     .map((word) => `<li class = "letter"></li>`)
     .join('')
 
-  let test = await axios.get(
-    `https://api.dictionaryapi.dev/api/v2/entries/en/${currentWord}`
-  )
-  hint = test.data[0].meanings[0].definitions[0].definition
+  try {
+    let test = await axios.get(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${currentWord}`
+    )
+    hint = test.data[0].meanings[0].definitions[0].definition
+    // Meaning found, proceed with using the hint
+  } catch (error) {
+    console.error('Meaning not found in API, generating new word')
+    // Generate a new random word and call getMeaning again
+    randomWord()
+  }
   console.log(hint)
   document.querySelector('.hint-text b').innerText = hint
   wordArray = [...currentWord]
@@ -79,13 +87,14 @@ const gameOver = () => {
   resetBtn.disabled = true
   msg.innerText = `the correct word was ${currentWord} and Your scores are ${score}`
 }
-
 const gamePlay = () => {
   inputVal = input.value.toLowerCase()
   console.log(inputVal)
   if (input.value.trim() === '') {
+    emptyInput = true
     return
   }
+  emptyInput = false
   wordArray.forEach((word, index) => {
     if (word === inputVal) {
       correct = true
@@ -103,16 +112,30 @@ const gamePlay = () => {
   score += Random * diff
   vowels.forEach((vowel) => {
     if (inputVal === vowel) {
-       score = score - 25}
+      score = score - 25 * diff
+      scoreValue.style.color = 'red'
+      done = true
+    }
   })
+  if (!done) {
+    scoreValue.style.color = 'greenyellow'
+  }
+  done = false
 
   scoreValue.innerText = score
   diff = 0
   input.value = ''
+  if (wrongGuess > 0) {
+    wrng.style.color = 'red'
+  }
   if (wrongGuess === maxGuesses) {
     return gameOver()
   }
   correct = false
+  if (checkArr.length === wordArray.length) {
+    randomWord()
+    animateFortune()
+  }
 }
 
 const reset = () => {
@@ -131,16 +154,16 @@ const reset = () => {
 nextTurn.addEventListener('click', () => {
   if (checkArr.length != wordArray.length && checkArr.length > 0) {
     gamePlay()
-    animateFortune()
+    if (!emptyInput) {
+      animateFortune()
+    }
   } else if (checkArr.length === 0) {
     gamePlay()
-    animateFortune()
-  } else if (checkArr.length === wordArray.length) {
-    gamePlay()
-    randomWord()
+    if (!emptyInput) {
+      animateFortune()
+    }
   }
 })
-
 
 playAgain.addEventListener('click', () => {
   popup.style.display = 'none'
@@ -148,36 +171,32 @@ playAgain.addEventListener('click', () => {
   reset()
   wrng.innerText = `${wrongGuess} / ${maxGuesses}`
   scoreValue.innerText = score
-  nextTurn.disabled=false
-  resetBtn.disabled=false
+  nextTurn.disabled = false
+  resetBtn.disabled = false
 })
 
 resetBtn.addEventListener('click', () => {
   reset()
 })
 
-checkBtn.addEventListener('click', ()=>{
- 
-  
-    if (currentWord===solveInput.value){
-      score += Random * 50
-      randomWord()
-      gamePlay()
-      animateFortune()
-    }
-    else {
-      score=0;
-      gameOver()
-    }
-    scoreValue.innerText = score
-    solvePop.style.display="none"
+checkBtn.addEventListener('click', () => {
+  if (currentWord === solveInput.value) {
+    score += Random * 50
+    randomWord()
+    gamePlay()
+    animateFortune()
+  } else {
+    score = 0
+    gameOver()
+  }
+  scoreValue.innerText = score
+  solvePop.style.display = 'none'
 })
-solveBtn.addEventListener('click', ()=>{
-  solvePop.style.display = "block"
+solveBtn.addEventListener('click', () => {
+  solvePop.style.display = 'block'
 })
 
-redobtn.addEventListener('click', ()=>{
+redobtn.addEventListener('click', () => {
   animateFortune()
   randomWord()
-
 })
