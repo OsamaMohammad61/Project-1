@@ -75,10 +75,9 @@ const randomWord = async () => {
       `https://api.dictionaryapi.dev/api/v2/entries/en/${currentWord}`
     )
     hint = test.data[0].meanings[0].definitions[0].definition
-    // Meaning found, proceed with using the hint
+    
   } catch (error) {
     console.error('Meaning not found in API, generating new word')
-    // Generate a new random word and call getMeaning again
     randomWord()
   }
   console.log(hint)
@@ -214,4 +213,5 @@ solveBtn.addEventListener('click', () => {
 
 backBtn.addEventListener('click', () => {
   solvePop.style.display = 'none'
+  solveInput.value=""
 })
