@@ -33,12 +33,16 @@ let maxGuesses = 6
 let vowels = ['a', 'e', 'i', 'o', 'u']
 
 ///////////////functions////////////////////
+
+//onload function to load things
 body.onload = () => {
   randomWord()
   animateFortune()
   wrng.innerText = `${wrongGuess} / ${maxGuesses}`
   scoreValue.innerText = score
 }
+
+//function to animate the numbers in the fortune box
 const animateFortune = () => {
   let currentNumber = 0
   Random = Math.floor(Math.random() * 100)
@@ -54,6 +58,7 @@ const animateFortune = () => {
   }, 30)
 }
 
+//function to get random words along with hint
 const randomWord = async () => {
   let test1 = await axios.get('https://api.api-ninjas.com/v1/randomword', {
     headers: { 'X-Api-Key': 'FLozrBrtj7nfy0JE0CItCQ==ikziNculhRtgSryP' }
@@ -83,6 +88,7 @@ const randomWord = async () => {
   checkArr = []
 }
 
+//function to display the game Over message
 const gameOver = () => {
   popup.style.display = 'block'
   playAgain.style.display = 'block'
@@ -90,6 +96,8 @@ const gameOver = () => {
   resetBtn.disabled = true
   msg.innerText = `the correct word was ${currentWord} and Your scores are ${score}`
 }
+
+//function to take the input and check the game winner
 const gamePlay = () => {
   inputVal = input.value.toLowerCase()
   console.log(inputVal)
@@ -141,6 +149,7 @@ const gamePlay = () => {
   }
 }
 
+//function to reset the game
 const reset = () => {
   checkArr = []
   input.innerText = ''

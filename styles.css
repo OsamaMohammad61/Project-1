@@ -1,8 +1,8 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center the container horizontally */
-  align-items: center; /* Center the container vertically */
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   margin: 0;
   background-color: purple;
@@ -105,13 +105,13 @@ body {
   margin: 10px;
   font-weight: bold;
   font-size: large;
-  order: 1; /* Set order to 1 to push it to the right */
+  order: 1;
 }
 #guess {
   margin: 10px;
   font-weight: bold;
   font-size: large;
-  order: -1; /* Set order to -1 to push it to the left */
+  order: -1;
 }
 
 #game-over-popup {
@@ -120,27 +120,26 @@ body {
   left: 50%;
   width: 40%;
   height: 35%;
-  transform: translate(-50%, -50%); /* Center the popup */
+  transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
   border: 2px solid #ccc;
   z-index: 10;
   text-align: center;
-  display: none; /* Initially hidden (matches 'hidden' class in JS) */
+  display: none;
 }
 
 #playAgain {
-  position: absolute; /* Make the button absolute relative to the popup */
-  bottom: 20px; /* Position 20px from the bottom */
-  left: 38%; /* Center horizontally */
-  /* Center the button horizontally within the popup */
+  position: absolute;
+  bottom: 20px;
+  left: 38%;
   display: flex;
-  align-items: center; /* Align button content vertically */
-  justify-content: center; /* Align button content horizontally */
+  align-items: center;
+  justify-content: center;
   width: 80px;
   height: 30px;
-  background-color: rgb(245, 191, 191); /* Adjust button background color */
-  color: rgb(231, 26, 26); /* Adjust button text color */
+  background-color: rgb(245, 191, 191);
+  color: rgb(231, 26, 26);
   border: none;
 
   border-radius: 5px;
@@ -151,15 +150,15 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 300px; /* Adjust width as needed */
+  width: 300px;
   height: 100px;
-  transform: translate(-50%, -50%); /* Center the popup */
+  transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
   border: 2px solid #ccc;
   z-index: 10;
   text-align: center;
-  display: none; /* Initially hidden */
+  display: none;
 }
 
 #solve-input {
@@ -170,7 +169,7 @@ body {
 }
 
 #check-btn {
-  background-color: #4caf50; /* Green */
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -178,47 +177,45 @@ body {
 }
 
 #game-btn button {
-  background-color: #4caf50; /* Green color */
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-weight: bold;
-  margin: 0 10px; /* Add spacing between buttons */
-  cursor: pointer; /* Indicate clickable button on hover */
-  transition: background-color 0.2s ease-in-out; /* Add hover effect */
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
-/* Style for hover effect */
 #game-btn button:hover {
-  background-color: #3e8e41; /* Darker green on hover */
+  background-color: #3e8e41;
 }
 
-/* Style the reset button differently (optional) */
 #reset-btn {
-  background-color: #ffcc00; /* Orange color for reset */
+  background-color: #ffcc00;
 }
 
 #reset-btn:hover {
-  background-color: #ffa300; /* Darker orange on hover */
+  background-color: #ffa300;
 }
 
 #solvebtn {
-  background-color: #2ecc71; /* Emerald green color */
+  background-color: #2ecc71;
   color: white;
-  padding: 12px 30px; /* Adjust padding for desired size */
+  padding: 12px 30px;
   border: none;
-  border-radius: 25px; /* Rounded corners */
+  border-radius: 25px;
   font-weight: bold;
-  font-size: 16px; /* Adjust font size as needed */
-  cursor: pointer; /* Indicate clickable button on hover */
-  transition: background-color 0.2s ease-in-out; /* Add hover effect */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); /* Slight text shadow */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #solvebtn:hover {
-  background-color: #27ae60; /* Darker green on hover */
+  background-color: #27ae60;
 }
 
 #score-value {
