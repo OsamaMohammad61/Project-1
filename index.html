@@ -10,7 +10,9 @@
     <title>WordSmith's Enigma</title>
 </head>
 <body>
-    <button><a href="rules.html">Rules Page</a></button>
+    <div id="next-page">
+        <button><a href="rules.html">Rules Page</a></button>
+    </div>
     
     <div id="container">
         <div id="game-over-popup">
@@ -20,6 +22,7 @@
         <div id="solve-popup">
             <input type="text" id="solve-input" placeholder="Enter your guess">
             <button id="check-btn">Check</button>
+            <button id="back-btn">Back</button>
         </div>
         <div class="header">
         <div id="score">Score: <span id="score-value"></span></div>
@@ -29,11 +32,16 @@
         <h4 class="hint-text">Hint: <b></b></h4>
         
         <div id="solve"><button id="solvebtn">Solve</button></div>
-        <div id="boxes">
-            <div id="fortune-box"><span id="fortune-teller"></span></div>
-            <input id="input"  autofocus  type="text" maxlength="1" size="1" pattern="[A-Za-z]" placeholder="Input 1 character">
+        
+        <div id="box-label"><p id="box-of-fortune">Box of Fortune</p>
             
         </div>
+        
+        <div id="boxes">
+            <div id="fortune-box"><span id="fortune-teller"></span></div>  
+            <div id="input-div"><input id="input"  autofocus  type="text" maxlength="1" size="1" pattern="[A-Za-z]" placeholder="Input 1 character"></div>  
+        </div>
+        
     
         <div id="game-btn">
             <button id="next-turn">Next Turn</button>

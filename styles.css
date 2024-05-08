@@ -1,10 +1,17 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center; /* Center the container horizontally */
   align-items: center; /* Center the container vertically */
   height: 100vh;
   margin: 0;
-  background-color: purple; /* Your desired light purple color */
+  background-color: purple;
+}
+#next-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 }
 #container {
   width: 850px;
@@ -59,6 +66,16 @@ body {
   border: 2px solid;
   height: 50px;
   width: 100px;
+}
+#solve {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.hint-text {
+  color: brown;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 #Solve-btn {
@@ -212,7 +229,7 @@ body {
   justify-content: center;
 }
 #boxes div {
-  border-radius: 50%; /* Apply 5px rounded corners to all elements within #boxes */
+  border-radius: 50%;
 }
 #boxes input {
   border-radius: 20px;
@@ -221,4 +238,46 @@ body {
 #wrong-guesses {
   font-weight: bold;
   font-size: larger;
+}
+#box-of-fortune {
+  margin: 10px;
+  font-weight: bold;
+  font-size: larger;
+}
+#box-label {
+  display: flex;
+  justify-content: left;
+  margin-top: 40px;
+  margin-left: 250px;
+  flex-direction: row;
+}
+
+#input-div {
+  margin-left: 80px;
+}
+
+#next-page button {
+  background-color: #2ecc71;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#next-page button:hover {
+  background-color: #cccccc;
+}
+
+#back-btn {
+  background-color: #4caf50; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
 }

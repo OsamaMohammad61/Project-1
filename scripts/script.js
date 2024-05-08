@@ -15,6 +15,7 @@ const solveInput = document.querySelector('#solve-input')
 const checkBtn = document.querySelector('#check-btn')
 const solveBtn = document.querySelector('#solvebtn')
 const redobtn = document.querySelector('#redo-btn')
+const backBtn = document.querySelector('#back-btn')
 let currentWord,
   inputVal,
   Random = ''
@@ -201,7 +202,6 @@ solveBtn.addEventListener('click', () => {
   solvePop.style.display = 'block'
 })
 
-redobtn.addEventListener('click', () => {
-  animateFortune()
-  randomWord()
+backBtn.addEventListener('click', () => {
+  solvePop.style.display = 'none'
 })

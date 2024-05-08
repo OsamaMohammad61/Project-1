@@ -32,16 +32,58 @@ p {
   color: black;
 }
 #heading {
+  display: flex;
   margin-bottom: 40px;
   font-weight: bolder;
+  flex-direction: column;
 }
-.aclonica-regular {
-  font-family: 'Aclonica', sans-serif;
-  font-weight: 400;
+
+.akshar {
+  font-family: 'Akshar', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
   font-style: normal;
-  word: spacing 2px;
 }
 
 .details {
   line-height: 30px;
+}
+.game {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#gameSpan {
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#return {
+  background-color: #2ecc71;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#retunBtn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.agbalumo-regular {
+  font-family: 'Agbalumo', system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#heading h1 {
+  justify-content: center;
 }
