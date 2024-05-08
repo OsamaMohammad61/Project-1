@@ -27,6 +27,7 @@ let wrongGuess = 0
 let done = false
 let correct = false
 let emptyInput = false
+let wrong = false
 let maxGuesses = 6
 let vowels = ['a', 'e', 'i', 'o', 'u']
 
@@ -44,6 +45,7 @@ const animateFortune = () => {
     currentNumber = Math.floor(Math.random() * 100)
     fortune.innerText = currentNumber
     nextTurn.disabled = true
+    resetBtn.diabled = true
     if (currentNumber === Random) {
       nextTurn.disabled = false
       clearInterval(animationInterval)
@@ -147,6 +149,9 @@ const reset = () => {
   correct = false
   randomWord()
   animateFortune()
+  scoreValue.innerText = score
+  wrng.innerText = `${wrongGuess} / ${maxGuesses}`
+  sco
 }
 
 //////////////Event Listners///////////////////////////

@@ -20,7 +20,8 @@ body {
   margin-left: 150px;
 }
 #score-value {
-  margin-left: 10px; /* Adjust margin to create space between "Score" and score value */
+  margin-left: 10px;
+  font-size: x-large;
 }
 
 #game-btn {
@@ -72,6 +73,7 @@ body {
   flex-wrap: wrap;
   gap: 5px;
   margin-top: 40px;
+  justify-content: center;
 }
 .word-display .letter {
   width: 40px;
@@ -214,4 +216,9 @@ body {
 }
 #boxes input {
   border-radius: 20px;
+}
+
+#wrong-guesses {
+  font-weight: bold;
+  font-size: larger;
 }
