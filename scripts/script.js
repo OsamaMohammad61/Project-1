@@ -206,6 +206,7 @@ checkBtn.addEventListener('click', () => {
   }
   scoreValue.innerText = score
   solvePop.style.display = 'none'
+  solveInput.value=""
 })
 solveBtn.addEventListener('click', () => {
   solvePop.style.display = 'block'

@@ -279,7 +279,16 @@ body {
   border-radius: 4px;
 }
 
-.dark-theme {
-  background-color: black;
+#nextPagebtn{
+  background-color: #2ecc71;
   color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }

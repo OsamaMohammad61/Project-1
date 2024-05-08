@@ -33,9 +33,10 @@ p {
 }
 #heading {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-weight: bolder;
   flex-direction: column;
+  justify-content: center;
 }
 
 .akshar {
@@ -84,6 +85,10 @@ p {
   font-style: normal;
 }
 
-#heading h1 {
+#h1-tag{
+  display: flex;
+  
+  font-weight: bolder;
   justify-content: center;
+  font-size: 3rem;
 }
