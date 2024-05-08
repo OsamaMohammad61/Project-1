@@ -281,3 +281,8 @@ body {
   border: none;
   border-radius: 4px;
 }
+
+.dark-theme {
+  background-color: black;
+  color: white;
+}
